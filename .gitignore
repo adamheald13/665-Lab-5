@@ -1,0 +1,6 @@
+fcg
+fcg.lex.o
+fcg.yacc.h
+fcg.yacc.o
+fcg.yacc.output
+test.dot
