@@ -18,6 +18,107 @@ extern int yylex();
 
 %token <id> ID
 %token INTVAL
+%token FLTVAL
+%token DBLVAL
+%token STRVAL
+%token CHARVAL
+%token VOID
+%token CHAR
+%token SHORT
+%token INT
+%token LONG
+%token FLOAT
+%token DOUBLE
+%token RETURN
+%token IF
+%token ELSE
+%token WHILE
+
+%token EQ
+%token NE
+%token GE
+%token LE
+%token GT
+%token LT
+%token ADD
+%token SUB
+%token MUL
+%token DIV
+%token MOD
+%token OR
+%token AND
+%token BITOR
+%token BITAND
+%token BITXOR
+%token NOT
+%token COM
+%token LSH
+%token RSH
+%token SET
+%token SETADD
+%token SETSUB
+%token SETMUL
+%token SETDIV
+%token SETMOD
+%token SETOR
+%token SETAND
+%token SETXOR
+%token SETLSH
+%token SETRSH
+
+%token UNSIGNED
+%token TYPEDEF
+%token STRUCT
+%token UNION
+%token CONST
+%token STATIC
+%token EXTERN
+%token AUTO
+%token REGISTER
+%token SIZEOF
+%token DO
+%token FOR
+%token SWITCH
+%token CASE
+%token DEFAULT
+%token CONTINUE
+%token BREAK
+%token GOTO
+
+%nonassoc IF
+%nonassoc ELSE
+
+%nonassoc NOT
+%nonassoc COM
+%nonassoc MUL
+%nonassoc DIV
+%nonassoc MOD
+%nonassoc ADD
+%nonassoc SUB
+%nonassoc LSH
+%nonassoc RSH
+%nonassoc LT
+%nonassoc LE
+%nonassoc GT
+%nonassoc GE
+%nonassoc EQ
+%nonassoc NE
+%nonassoc BITAND
+%nonassoc BITXOR
+%nonassoc BITOR
+%nonassoc AND
+%nonassoc OR
+%nonassoc SET
+%nonassoc SETADD
+%nonassoc SETSUB
+%nonassoc SETMUL
+%nonassoc SETDIV
+%nonassoc SETMOD
+%nonassoc SETLSH
+%nonassoc SETRSH
+%nonassoc SETAND
+%nonassoc SETXOR
+%nonassoc SETOR
 
 %start top
 
@@ -36,6 +137,119 @@ function : func_signature '{' func_body '}'
 
 /*This rule matches a function signature such as int main( int argc, char *argv[] )*/
 func_signature : type ID '(' args ')' { printf("%s", $2); printf(";\n"); lastFunction = $2;}
+
+func_body :
+			| declar func_body
+			| statement func_body
+			;
+args:
+			| param
+			| param ',' args
+			;
+
+param:		type ID
+			| type MUL ID '['']'
+			| type MUL ID '['expr']'
+			| type ID '[' expr ']'
+			| type ID'['']'
+			| type MUL ID
+			;
+
+
+functioncall:	ID '(' listexpr ')' {printf(lastFunction); printf(" -> "); printf("%s", $1); printf(";\n");}
+				;
+
+statement:
+			| ID SET expr ';'
+			| MUL ID SET expr ';'
+			| ID'['INTVAL']' SET expr ';'
+			| RETURN expr ';'
+			| '{' liststatement '}' //missing liststatement
+			| functioncall ';'
+			| IF '(' expr ')' statement ELSE statement
+			| IF '(' expr ')' statement
+			| WHILE '(' expr ')' statement
+			;
+
+declar:	type ID ';'
+		| type ID'['INTVAL']'
+		| type MUL ID '['']'
+		;
+
+liststatement:
+				| statement ',' liststatement
+				| statement
+				;
+
+listexpr:
+			| expr ',' listexpr
+			| expr
+			;
+
+expr: 	INTVAL
+		| STRVAL
+		| CHARVAL
+		| FLTVAL
+		| expr op expr
+		| functioncall
+		| ID
+		| MUL ID
+		| ID '['INTVAL']'
+		;
+
+
+op:	BITAND
+	| BITOR
+	| BITXOR
+	| op2
+	;
+
+op2:	EQ
+	| NE
+	| op3
+	;
+
+op3:	EQ
+	| NOT EQ
+	| op4
+	;
+
+op4: LT
+	| GT
+	| LE
+	| GE
+	| op5
+	;
+
+op5:	LSH
+	|RSH
+	| op6
+	;
+
+op6:	ADD
+	| SUB
+	| op7
+	;
+
+op7:	MUL
+	| DIV
+	| MOD
+	;
+
+
+
+
+type:		VOID
+			| CHAR
+			| SHORT
+			| INT
+			| LONG
+			| FLOAT
+			| DOUBLE
+			;
+
+
+
 
 /*********************************************************
  * An example rule used to parse arguments to a

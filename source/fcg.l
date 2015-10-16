@@ -31,43 +31,43 @@ octdigit      [0-7]
 %}
 
 "unsigned" {
-  DEBUGF( "unsigned\n" ); return 'unsigned';
+  DEBUGF( "UNSIGNED\n" ); return UNSIGNED;
 }
 
 "typedef" {
-  DEBUGF( "typedef\n" ); return 'typedef';
+  DEBUGF( "TYPEDEF\n" ); return TYPEDEF;
 }
 
 "struct" {
-  DEBUGF( "struct\n" ); return 'struct';
+  DEBUGF( "STRUCT\n" ); return STRUCT;
 }
 
 "union" {
-  DEBUGF( "union\n" ); return 'union';
+  DEBUGF( "UNION\n" ); return UNION;
 }
 
 "const" {
-  DEBUGF( "const\n" ); return 'const';
+  DEBUGF( "CONST\n" ); return CONST;
 }
 
 "static" {
-  DEBUGF( "static\n" ); return 'static';
+  DEBUGF( "STATIC\n" ); return STATIC;
 }
 
 "extern" {
-  DEBUGF( "extern\n" ); return 'extern';
+  DEBUGF( "EXTERN\n" ); return EXTERN;
 }
 
 "auto" {
-  DEBUGF( "auto\n" ); return 'auto';
+  DEBUGF( "AUTO\n" ); return AUTO;
 }
 
 "register" {
-  DEBUGF( "register\n" ); return 'register';
+  DEBUGF( "REGISTER\n" ); return REGISTER;
 }
 
 "sizeof" {
-  DEBUGF( "sizeof\n" ); return 'sizeof';
+  DEBUGF( "SIZEOF\n" ); return SIZEOF;
 }
 
 %{
@@ -77,51 +77,51 @@ octdigit      [0-7]
 %}
 
  "return" {
-  DEBUGF( "RETURN\n" ); return 'RETURN';
+  DEBUGF( "RETURN\n" ); return RETURN;
 }
 
 "do" {
-  DEBUGF( "DO\n" ); return 'DO';
+  DEBUGF( "DO\n" ); return DO;
 }
 
 "while" {
-  DEBUGF( "WHILE\n" ); return 'WHILE';
+  DEBUGF( "WHILE\n" ); return WHILE;
 }
 
 "for" {
-  DEBUGF( "FOR\n" ); return 'FOR';
+  DEBUGF( "FOR\n" ); return FOR;
 }
 
 "switch" {
-  DEBUGF( "SWITCH\n" ); return 'SWITCH';
+  DEBUGF( "SWITCH\n" ); return SWITCH;
 }
 
 "case" {
-  DEBUGF( "CASE\n" ); return 'CASE';
+  DEBUGF( "CASE\n" ); return CASE;
 }
 
 "default" {
-  DEBUGF( "DEFAULT\n" ); return 'DEFAULT';
+  DEBUGF( "DEFAULT\n" ); return DEFAULT;
 }
 
 "if" {
-  DEBUGF( "IF\n" ); return 'IF';
+  DEBUGF( "IF\n" ); return IF;
 }
 
 "else" {
-  DEBUGF( "ELSE\n" ); return 'ELSE';
+  DEBUGF( "ELSE\n" ); return ELSE;
 }
 
 "continue" {
-  DEBUGF( "CONTINUE\n" ); return 'CONTINUE';
+  DEBUGF( "CONTINUE\n" ); return CONTINUE;
 }
 
 "break" {
-  DEBUGF( "BREAK\n" ); return 'BREAK';
+  DEBUGF( "BREAK\n" ); return BREAK;
 }
 
 "goto" {
-  DEBUGF( "GOTO\n" ); return 'GOTO';
+  DEBUGF( "GOTO\n" ); return GOTO;
 }
 
 %{
@@ -131,127 +131,127 @@ octdigit      [0-7]
 %}
 
 "==" {
-  DEBUGF( "EQ\n" ); return 'EQ';
+  DEBUGF( "EQ\n" ); return EQ;
 }
 
 "!=" {
-  DEBUGF( "NE\n" ); return 'NE';
+  DEBUGF( "NE\n" ); return NE;
 }
 
 ">=" {
-  DEBUGF( "GE\n" ); return 'GE';
+  DEBUGF( "GE\n" ); return GE;
 }
 
 "<=" {
-  DEBUGF( "LE\n" ); return 'LE';
+  DEBUGF( "LE\n" ); return LE;
 }
 
 ">" {
-  DEBUGF( "GT\n" ); return 'GT';
+  DEBUGF( "GT\n" ); return GT;
 }
 
 "<" {
-  DEBUGF( "LT\n" ); return 'LT';
+  DEBUGF( "LT\n" ); return LT;
 }
 
 "+" {
-  DEBUGF( "ADD\n" ); return 'ADD';
+  DEBUGF( "ADD\n" ); return ADD;
 }
 
 "-" {
-  DEBUGF( "SUB\n" ); return 'SUB';
+  DEBUGF( "SUB\n" ); return SUB;
 }
 
 "*" {
-  DEBUGF( "MUL\n" ); return 'MUL';
+  DEBUGF( "MUL\n" ); return MUL;
 }
 
 "/" {
-  DEBUGF( "DIV\n" ); return 'DIV';
+  DEBUGF( "DIV\n" ); return DIV;
 }
 
 "%" {
-  DEBUGF( "MOD\n" ); return 'MOD';
+  DEBUGF( "MOD\n" ); return MOD;
 }
 
 "||" {
-  DEBUGF( "OR\n" ); return 'OR';
+  DEBUGF( "OR\n" ); return OR;
 }
 
 "&&" {
-  DEBUGF( "ADD\n" ); return 'ADD';
+  DEBUGF( "ADD\n" ); return ADD;
 }
 
 "|" {
-  DEBUGF( "BITOR\n" ); return 'BITOR';
+  DEBUGF( "BITOR\n" ); return BITOR;
 }
 
 "&" {
-  DEBUGF( "BITAND\n" ); return 'BITAND';
+  DEBUGF( "BITAND\n" ); return BITAND;
 }
 
 "^" {
-  DEBUGF( "BITXOR\n" ); return 'BITXOR';
+  DEBUGF( "BITXOR\n" ); return BITXOR;
 }
 
 "!" {
-  DEBUGF( "NOT\n" ); return 'NOT';
+  DEBUGF( "NOT\n" ); return NOT;
 }
 
 "~" {
-  DEBUGF( "COM\n" ); return 'COM';
+  DEBUGF( "COM\n" ); return COM;
 }
 
 "<<" {
-  DEBUGF( "LSH\n" ); return 'LSH';
+  DEBUGF( "LSH\n" ); return LSH;
 }
 
 ">>" {
-  DEBUGF( "RSH\n" ); return 'RSH';
+  DEBUGF( "RSH\n" ); return RSH;
 }
 
 "=" {
-  DEBUGF( "SET\n" ); return 'SET';
+  DEBUGF( "SET\n" ); return SET;
 }
 
 "+=" {
-  DEBUGF( "SETADD\n" ); return 'SETADD';
+  DEBUGF( "SETADD\n" ); return SETADD;
 }
 
 "-=" {
-  DEBUGF( "SETSUB\n" ); return 'SETSUB';
+  DEBUGF( "SETSUB\n" ); return SETSUB;
 }
 
 "*=" {
-  DEBUGF( "SETMUL\n" ); return 'SETMUL';
+  DEBUGF( "SETMUL\n" ); return SETMUL;
 }
 
 "/=" {
-  DEBUGF( "SETDIV\n" ); return 'SETDIV';
+  DEBUGF( "SETDIV\n" ); return SETDIV;
 }
 
 "%=" {
-  DEBUGF( "SETMOD\n" ); return 'SETMOD';
+  DEBUGF( "SETMOD\n" ); return SETMOD;
 }
 
 "|=" {
-  DEBUGF( "SETOR\n" ); return 'SETOR';
+  DEBUGF( "SETOR\n" ); return SETOR;
 }
 
 "&=" {
-  DEBUGF( "SETAND\n" ); return 'SETAND';
+  DEBUGF( "SETAND\n" ); return SETAND;
 }
 
 "^=" {
-  DEBUGF( "SETXOR\n" ); return 'SETXOR';
+  DEBUGF( "SETXOR\n" ); return SETXOR;
 }
 
 "<<=" {
-  DEBUGF( "SETLSH\n" ); return 'SETLSH';
+  DEBUGF( "SETLSH\n" ); return SETLSH;
 }
 
 ">>=" {
-  DEBUGF( "SETRSH\n" ); return 'SETRSH';
+  DEBUGF( "SETRSH\n" ); return SETRSH;
 }
 
 %{
@@ -261,31 +261,31 @@ octdigit      [0-7]
 %}
 
 "void" {
-  DEBUGF( "VOID\n" ); return 'VOID';
+  DEBUGF( "VOID\n" ); return VOID;
 }
 
 "char" {
-  DEBUGF( "CHAR\n" ); return 'CHAR';
+  DEBUGF( "CHAR\n" ); return CHAR;
 }
 
 "short" {
-  DEBUGF( "SHORT\n" ); return 'SHORT';
+  DEBUGF( "SHORT\n" ); return SHORT;
 }
 
 "int" {
-  DEBUGF( "INT\n" ); return 'INT';
+  DEBUGF( "INT\n" ); return INT;
 }
 
 "long" {
-  DEBUGF( "LONG\n" ); return 'LONG';
+  DEBUGF( "LONG\n" ); return LONG;
 }
 
 "float" {
-  DEBUGF( "FLOAT\n" ); return 'FLOAT';
+  DEBUGF( "FLOAT\n" ); return FLOAT;
 }
 
 "double" {
-  DEBUGF( "DOUBLE\n" ); return 'DOUBLE';
+  DEBUGF( "DOUBLE\n" ); return DOUBLE;
 }
 
 %{ 
@@ -322,19 +322,19 @@ octdigit      [0-7]
 "0"{octdigit}*  { DEBUGF( "INTVAL\n" ); return INTVAL; }
 [1-9]{digit}*   { DEBUGF( "INTVAL\n" ); return INTVAL; }
 [0-9]+"."[0-9]+"f" {
-  DEBUGF( "FLTVAL\n" ); return 'FLTVAL';
+  DEBUGF( "FLTVAL\n" ); return FLTVAL;
 }
 
 [0-9]+"."[0-9]+ {
-  DEBUGF( "DBLVAL\n" ); return 'DBLVAL';
+  DEBUGF( "DBLVAL\n" ); return DBLVAL;
 }
 
 "\""[^<]*"\"" {
-  DEBUGF( "STRVAL\n" ); return 'STRVAL';
+  DEBUGF( "STRVAL\n" ); return STRVAL;
 }
 
  "'"[^<]*"'" {
-  DEBUGF( "CHARVAL\n" ); return 'CHARVAL';
+  DEBUGF( "CHARVAL\n" ); return CHARVAL;
  }
 
 %{
